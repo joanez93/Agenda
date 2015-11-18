@@ -1,0 +1,126 @@
+/* 
+	http://izzyweb.com.br 
+	autor: Joanez Andrades;
+   	Licença: izzyweb-2015;
+*/
+/*================================== Fonts usadas no projeto ==================================*/
+@import url(http://fonts.googleapis.com/css?family=Quicksand); /* - Titulos - h1 - */
+@import url(http://fonts.googleapis.com/css?family=Russo-One); /* - Titulos - h2 - */
+@import url(http://fonts.googleapis.com/css?family=Quicksand:700); /* - Titulos - h3, h4, h5, h6; - */
+@import url(http://fonts.googleapis.com/css?family=Montserrat); /* - Paragráfos, spans, span,label, placeholder, input, button, textarea, ul, li, i - */
+@import url(http://fonts.googleapis.com/css?family=Allerta+Stencil); /* blockquote*/	
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icons/icomoon.eot?ilqtxx');
+	src:url('fonts/icons/icomoon.eot?#iefixilqtxx') format('embedded-opentype'),
+		url('fonts/icons/icomoon.woff?ilqtxx') format('woff'),
+		url('fonts/icons/icomoon.ttf?ilqtxx') format('truetype'),
+		url('fonts/icons/icomoon.svg?ilqtxx#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*================================== Definições de tags globais ==================================*/
+
+html, body{
+	font-size: 62.5%; /*---Fonte definida em 10px---*/
+	height: 100%;
+	margin: 0;
+}
+header, nav{
+	margin: 0;
+}
+img{
+	width: 100%;
+}
+ul, li, i{
+	font-family: 'Montserrat','icomoon';
+	display: inline-block;
+	list-style: none;
+}
+a, a:hover{
+	list-style: none;
+	text-decoration: none;
+}
+/* ------------- Definição de fontes para textos, titulos e afins ------------- */
+h1{
+	font-family: 'Quicksand', 'icomoon', sans-serif;
+}
+h2{
+	font-family: 'Russo-One', 'icomoon', sans-serif;
+}
+
+h3, h4, h5, h6{
+	font-family: 'Quicksand', 'icomoon', sans-serif; 
+	font-weight: 700;
+}
+p, a, span,label,table,placeholder, input, button, textarea{
+	font-family: 'Montserrat', 'icomoon', sans-serif;
+}
+blockquote{
+	font-family: 'Droid Sans', sans-serif;
+}
+
+@media(min-width: 1366px){
+	h1{
+		font-size: 4em;
+	}
+		h1.title{
+			color: rgba(52, 73, 94, .5);
+			text-align: center;
+		}
+
+
+
+/*Seção Agenda*/
+	section#agenda{
+		width: 50%;
+		height: auto;
+		margin: 0 auto;
+		margin-top: 2%;
+		margin-bottom: 2%;
+	}
+		section#agenda table{
+			widows: 100%;
+		}
+		section#agenda table thead th{
+			width: 25%;
+			font-size: 2.5em;
+			text-align: left;
+			color: rgba(127, 140, 141,1.0);
+		}
+		
+		section#agenda table tbody td{
+			width: auto;
+			height: 2.5em;
+			line-height: 40px;
+			color: rgba(127, 140, 141, .5);
+			font-size: 2.3em;
+			padding: .2%;
+			border-bottom: .1em solid rgba(149, 165, 166, .2);
+		}
+
+	section#form-adc{
+		width: 50%;
+		margin: 0 auto;
+	}
+		section#form-adc input, select{
+			width: 99%;
+			height: 2.5em;
+			display: block;
+			margin: .5% 0 .5% 0;
+			padding: 0 0 0 .5%;
+		}
+
+
+		section#form-adc button{
+			width: 50%;
+			height: 3em;
+			margin-left: 25%;
+			margin-top: 2%;
+		}
+	footer{
+		text-align: center;\
+	}
+}

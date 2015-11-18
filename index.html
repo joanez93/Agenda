@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="appAgenda">
+<head>
+	<meta charset="utf-8" />
+
+	<!-- Import JS -->
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-messages.min.js"></script>
+	<script type="text/javascript" src="js/app-agenda.js"></script>
+
+	<!-- Import CSS -->
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<title>Agenda de Contatos - Angular-JS</title>
+</head>
+<body ng-controller="appAgendaCtrl">
+<h1 class="title">Agenda de Contatos</h1>
+<section id="agenda">
+	<table>
+		<thead>
+			<th>Nome</th>
+			<th>DDD</th>
+			<th>Número</th>
+			<th>Cidade</th>
+			<th>Operadora</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="contato in agenda">
+				<td>{{contato.name}}</td>
+				<td>{{contato.ddd}}</td>
+				<td>{{contato.phone}}</td>
+				<td>{{contato.city}}</td>
+				<td>{{contato.op}}</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+
+<section id="form-adc">
+	<form>
+		<input type="text" placeholder="Nome/Apelido" />
+		<input type="number" placeholder="DDD" />
+		<input type="text" placeholder="Telefone" />
+		<input type="text" placeholder="Cidade">
+		<select>
+			<option value="">Escolha uma operadora</option>
+		</select>
+	</form>
+	<button>Adicionar Contato</button>
+</section>
+<footer>
+	IzzyWeb-2015
+</footer>
+</body>
+</html>

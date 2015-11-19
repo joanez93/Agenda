@@ -38,16 +38,45 @@
 </section>
 
 <section id="form-adc">
-	<form>
-		<input type="text" placeholder="Nome/Apelido" />
-		<input type="number" placeholder="DDD" />
-		<input type="text" placeholder="Telefone" />
-		<input type="text" placeholder="Cidade">
-		<select>
+	<form name="contatoForm">
+		<input type="text" placeholder="Nome/Apelido" name="nome" ng-model="contato.name" ng-required="true" ng-minlength="8" />
+		<input type="number" placeholder="DDD" name="ddd" ng-model="contato.ddd" ng-required="true" />
+		<input type="text" placeholder="Telefone" name="telefone" ng-model="contato.phone" ng-required="true" ng-pattern="/^\d{4,5}\-\d{4}$/" />
+		<input type="text" placeholder="Cidade" name="cidade" ng-model="contato.city" ng-required="true">
+		<select name="operadora" ng-model="contato.op" ng-required="true">
 			<option value="">Escolha uma operadora</option>
+			<option ng-repeat="operadora in operadoras">{{operadora}}</option>
 		</select>
 	</form>
-	<button>Adicionar Contato</button>
+
+<!-- Mensagens de sucesso -->
+	<div class="valid-message">
+		<span ng-show="contatoForm.nome.$valid">Nome:</span>
+		<span ng-show="contatoForm.ddd.$valid">DDD:</span>
+		<span ng-show="contatoForm.telefone.$valid">Telefone:</span>
+		<span ng-show="contatoForm.cidade.$valid">Cidade:</span>
+	</div>
+
+<!-- Mensagens de Erro -->
+	<div class="error-message" ng-messages="contatoForm.nome.$error">
+		<span ng-message="minlength">O campo Nome deve ter pelo menos 8 Caracteres!</span>
+	</div>
+
+	<div class="error-message" ng-messages="contatoForm.ddd.$error">
+		
+	</div>
+
+	<div class="error-message" ng-messages="contatoForm.telefone.$error">
+		<span ng-message="pattern">O Campo telefone deve seguir o padrão: 99999-9999</span>
+	</div>
+
+	<div class="error-message" ng-messages="contatoForm.cidade.$error && contatoForm.cidade.$dirty">
+		<span ng-message="required">Preencha o campo Cidade!</span>
+	</div>
+	
+	
+	
+	<button ng-click="adcContato(contato)" ng-disabled="!contatoForm.$valid">Adicionar Contato</button>
 </section>
 <footer>
 	IzzyWeb-2015

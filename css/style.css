@@ -43,6 +43,11 @@ a, a:hover{
 	list-style: none;
 	text-decoration: none;
 }
+
+
+/*-------------- Importando Ícones ---------------*/
+.ico-sucess:after{ content: '\e6fe'; padding-left: 2%;}
+
 /* ------------- Definição de fontes para textos, titulos e afins ------------- */
 h1{
 	font-family: 'Quicksand', 'icomoon', sans-serif;
